@@ -2,7 +2,7 @@ FROM osrf/ros:jazzy-desktop-full-noble
 
 RUN apt update
 
-RUN apt install python3-wheel
+RUN apt install python3-wheel python3-natsort
 
 WORKDIR /workspaces
 RUN git clone https://github.com/stevenlovegrove/Pangolin && \

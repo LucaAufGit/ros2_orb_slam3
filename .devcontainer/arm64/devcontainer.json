@@ -1,0 +1,29 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/alpine
+{
+	"name": "arm64-ros2",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	// "image": "osrf/ros:jazzy-desktop-full-noble"
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	"runArgs": [
+		"-e", "DISPLAY=:1"
+	],
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [5901],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "vncserver -kill :1 2>/dev/null || true && vncserver :1 -geometry 1920x1080 -depth 24 -SecurityTypes None && echo 'VNC server started on display :1 (port 5901) - no password required'"
+
+	// Configure tool-specific properties.
+	// "customizations": {},
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

@@ -217,7 +217,7 @@ class MonoDriver(Node):
 def main(args = None):
     rclpy.init(args=args) # Initialize node
     n = MonoDriver("mono_py_node") #* Initialize the node
-    rate = n.create_rate(60) # https://answers.ros.org/question/358343/rate-and-sleep-function-in-rclpy-library-for-ros2/
+    rate = n.create_rate(20) # https://answers.ros.org/question/358343/rate-and-sleep-function-in-rclpy-library-for-ros2/
     
     #* Blocking loop to initialize handshake
     while(n.send_config == True):
