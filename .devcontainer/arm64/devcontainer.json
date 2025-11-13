@@ -19,8 +19,11 @@
 	"forwardPorts": [5901],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "vncserver -kill :1 2>/dev/null || true && vncserver :1 -geometry 1920x1080 -depth 24 -SecurityTypes None && echo 'VNC server started on display :1 (port 5901) - no password required'"
+	//"postCreateCommand": "vncserver -kill :1 2>/dev/null || true && vncserver :1 -geometry 1920x1080 -depth 24 -SecurityTypes None && echo 'VNC server started on display :1 (port 5901) - no password required'"
 
+	// Use 'postStartCommand' to run commands after the container is created.
+	"postStartCommand": "vncserver -kill :1 2>/dev/null || true && vncserver :1 -geometry 1920x1080 -depth 24 -SecurityTypes None && echo 'VNC server started on display :1 (port 5901) - no password required'"
+	
 	// Configure tool-specific properties.
 	// "customizations": {},
 
